@@ -1,3 +1,4 @@
+const { notStrictEqual } = require('assert');
 const express = require('express');
 const path = require('path');
 const api = require('./routes/index.js');
@@ -17,4 +18,9 @@ app.use(express.static('public'));
 // GET Route for homepage
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
+);
+
+// notes html GET route 
+app.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
