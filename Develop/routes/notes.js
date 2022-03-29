@@ -29,7 +29,7 @@ note.post('/', (req, res) => {
   }
 });
 
-note.delete('/:id', (req, res) => {     //still needs to be updated
+note.delete('/:id', (req, res) => {
   const params = req.params.id
 
   fs.readFile(`./db/db.json`, "utf8", (err, data) => {
@@ -38,7 +38,7 @@ note.delete('/:id', (req, res) => {     //still needs to be updated
     const noteFilter = givenData.filter(notes => {
       return notes.id !== params;
     });
-
+    res.json(noteFilter)
     fs.writeFile('./db/db.json', JSON.stringify(noteFilter), (err) => {
       if (err) {
         console.error(err)
@@ -48,6 +48,7 @@ note.delete('/:id', (req, res) => {     //still needs to be updated
     });
   });
 });
+
 
 
 
