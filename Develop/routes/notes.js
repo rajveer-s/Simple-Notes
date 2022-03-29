@@ -28,3 +28,27 @@ note.post('/', (req, res) => {
     res.error('Error in adding note');
   }
 });
+
+note.delete('/:id', (req, res) => {     //still needs to be updated
+  const params = req.params.id
+
+  fs.readFile(`./db/db.json`, "utf8", (err, data) => {
+    const givenData = JSON.parse(data);
+
+    const noteFilter = givenData.filter(notes => {
+      return notes.id !== params;
+    });
+
+    fs.writeFile('./db/db.json', JSON.stringify(noteFilter), (err) => {
+      if (err) {
+        console.error(err)
+      } else {
+        console.log('note deleted')
+      }
+    });
+  });
+});
+
+
+
+module.exports = note;
