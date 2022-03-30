@@ -31,11 +31,9 @@
 ---
 
 ## USAGE:
-You need to be inside the Develop folder to invoke the server.js file
+You need to follow the command below to invoke the server.js file
 
 ```
-cd Develop/
-
 node server.js
 
 ```
