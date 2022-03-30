@@ -12,10 +12,9 @@
 ## Table of Contents:
   - [Description](#description)
   - [Technologies Used](#technologies-used)
-  - [Installation](#installation)
   - [Usage](#usage)
+  - [Installation](#installation)
   - [Links](#links)
-  - [Video](#video)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
 
